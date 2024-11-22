@@ -12,12 +12,7 @@ export class DeviceInfoService {
    * @returns Promise<DeviceInfo> Includes model, platform, and operating system.
    */
   async getDeviceInfo(): Promise<DeviceInfo> {
-    try {
-      const deviceInfo = await Device.getInfo();
-      return deviceInfo;
-    } catch (error) {
-      console.error('Error fetching device info:', error);
-      throw error;
-    }
+    const deviceInfo = await Device.getInfo();
+    return deviceInfo;
   }
 }

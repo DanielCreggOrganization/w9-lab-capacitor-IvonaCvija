@@ -12,12 +12,7 @@ export class LocationService {
      * @returns Promise<Position> Current position with latitude, longitude, and more.
      */
   async getCurrentPosition(): Promise<Position> {
-    try {
-      const position = await Geolocation.getCurrentPosition();
-      return position;
-    } catch (error) {
-      console.error('Error fetching location:', error);
-      throw error;
-    }
+    const position = await Geolocation.getCurrentPosition();
+    return position;
   }
 }
