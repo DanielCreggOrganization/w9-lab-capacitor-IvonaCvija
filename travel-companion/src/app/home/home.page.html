@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Travel Companion
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- Camera Button -->
+        <ion-button expand="block" (click)="capturePhoto()">Take Picture</ion-button>
+        <img *ngIf="capturedImage" [src]="capturedImage" alt="Captured Image" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Location Button -->
+        <ion-button expand="block" (click)="getLocation()">Get Current Location</ion-button>
+        <p *ngIf="currentLocation">
+          Latitude: {{ currentLocation.latitude }} <br/>
+          Longitude: {{ currentLocation.longitude }}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- Device Info Button -->
+        <ion-button expand="block" (click)="fetchDeviceInfo()">Get Device Info</ion-button>
+        <p *ngIf="deviceInfo">
+          Model: {{ deviceInfo.model }} <br/>
+          Operating System: {{ deviceInfo.operatingSystem }} <br/>
+          Platform: {{ deviceInfo.platform }}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
